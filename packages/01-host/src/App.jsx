@@ -4,7 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import { BrowserRouter } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import React from "react";
-import Routes from "./Routes";
 import SideNav from "./SideNav";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -29,12 +28,13 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-function App() {
+function App({routes:Routes}) {
   const classes = useStyles();
 
   return (
     <BrowserRouter>
       <CssBaseline />
+      zack
       <div className={classes.root}>
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>

@@ -1,17 +1,15 @@
-import Dialog from "./Dialog";
 import React from "react";
-import { ThemeProvider } from "@material-ui/core";
-import { theme } from "./theme";
+import Routes from './Routes'
+const AppContainer = React.lazy(() => import("app_one/AppContainer"));
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <h1>Material UI App</h1>
-        <Dialog />
-      </div>
-    </ThemeProvider>
-  );
+const App = () => {
+    return (
+        <div>
+            <React.Suspense fallback="Loading App Container from Host">
+                <AppContainer routes={Routes}/>
+            </React.Suspense>
+        </div>
+    );
 }
 
 export default App;
