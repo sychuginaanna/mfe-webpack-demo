@@ -34,14 +34,17 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "host_app",
-      library: { type: "var", name: "host_app" },
+      name: "app_one",
+      library: { type: "var", name: "app_one" },
       filename: "remoteEntry.js",
       remotes: {
-        app_mui: "app_mui",
-        app_sc: "app_sc"
+        app_two: "app_two",
+        app_three: "app_three"
       },
-      shared: ["react", "react-dom"]
+      exposes: {
+        'AppContainer':'./src/App'
+      },
+      shared: ["react", "react-dom","react-router-dom"]
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
