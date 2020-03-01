@@ -1,11 +1,15 @@
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import {
+  Divider,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  createStyles,
+  makeStyles
+} from "@material-ui/core";
 
-import Divider from "@material-ui/core/Divider";
-import Drawer from "@material-ui/core/Drawer";
 import { Link } from "react-router-dom";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
 
 const drawerWidth = 240;
@@ -19,7 +23,12 @@ const useStyles = makeStyles(theme =>
     drawerPaper: {
       width: drawerWidth
     },
-    toolbar: theme.mixins.toolbar
+    toolbar: {
+      ...theme.mixins.toolbar,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
   })
 );
 
@@ -35,9 +44,14 @@ export default function SideNav() {
       }}
       anchor="left"
     >
-      <div className={classes.toolbar} />
+      <div className={classes.toolbar}>
+        <Typography variant="h6">SideNav</Typography>
+      </div>
       <Divider />
       <List>
+        <ListItem button component={Link} to="/">
+          <ListItemText primary="Main" />
+        </ListItem>
         <ListItem button component={Link} to="/page1">
           <ListItemText primary="Dialog" />
         </ListItem>

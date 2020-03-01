@@ -34,17 +34,18 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "app_one",
-      library: { type: "var", name: "app_one" },
+      name: "host_app",
+      library: { type: "var", name: "host_app" },
       filename: "remoteEntry.js",
       remotes: {
-        app_two: "app_two",
-        app_three: "app_three"
+        app_mui: "app_mui",
+        app_sc: "app_sc"
       },
       exposes: {
-        'AppContainer':'./src/App'
+        SideNav: "./src/SideNav",
+        Page: "./src/Page"
       },
-      shared: ["react", "react-dom","react-router-dom"]
+      shared: ["react", "react-dom", "@material-ui/core","react-router","react-router-dom"]
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
