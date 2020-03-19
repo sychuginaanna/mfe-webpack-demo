@@ -1,0 +1,22 @@
+{
+  "lerna": "2.9.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "__tests__/**",
+        "*.stories.js",
+        "*.stories.jsx"
+      ],
+      "message": "chore(release): publish APP",
+      "conventionalCommits": true,
+      "yes": true
+    }
+  },
+  "cacheDir": ".tmp/lerna",
+  "registry": "http://localhost:4873/"
+}
+

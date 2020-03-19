@@ -5,9 +5,14 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
+    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
+    "prepublish": "npm run build",
+    "build": "lerna run build",
+    "build:watch": "lerna run --parallel build:watch",
+    "version:bump": "lerna version --conventional-commits --yes"
   },
   "devDependencies": {
+    "lerna": "^3.20.2",
     "wsrun": "^5.2.0"
   },
   "dependencies": {
