@@ -7,9 +7,7 @@
   "command": {
     "publish": {
       "ignoreChanges": [
-        "__tests__/**",
-        "*.stories.js",
-        "*.stories.jsx"
+        "__tests__/**"
       ],
       "message": "chore(release): publish APP",
       "conventionalCommits": true,
