@@ -1,5 +1,3 @@
-// deps normalizer
-
 process.env.NODE_ENV = 'development';
 process.env.BABEL_ENV = 'development';
 
@@ -7,14 +5,6 @@ const fs = require('fs');
 const pkg = require('../package.json');
 const findImports = require('./findImports');
 const globby = require('globby');
-const orderBy = require('lodash/orderBy');
-
-fs.writeFileSync(
-  '.babelrc',
-  JSON.stringify({
-    presets: ['babel-preset-react-app']
-  })
-);
 
 main().catch(err => {
   console.error(err);
