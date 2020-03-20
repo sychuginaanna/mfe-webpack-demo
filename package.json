@@ -9,13 +9,17 @@
     "prepublish": "npm run build",
     "build": "lerna run build",
     "build:watch": "lerna run --parallel build:watch",
-    "version:bump": "lerna version --conventional-commits --yes"
+    "version:bump": "lerna version --conventional-commits --yes",
+    "publish": "lerna publish"
   },
   "devDependencies": {
+    "babel-preset-react-app": "^9.1.1",
     "lerna": "^3.20.2",
     "wsrun": "^5.2.0"
   },
   "dependencies": {
-    "concurrently": "^5.1.0"
+    "babel": "^6.23.0",
+    "concurrently": "^5.1.0",
+    "find-imports": "^1.1.0"
   }
 }
