@@ -3,7 +3,7 @@ const path = require("path");
 const values = require("lodash/values");
 const uniq = require("lodash/uniq");
 const flatten = require("lodash/flatten");
-const fg = require("fast-glob");
+const globby = require("globby");
 
 const findImports = patterns => {
   let requiredModules = {};
@@ -16,7 +16,7 @@ const findImports = patterns => {
 
   patterns = [].concat(patterns || []);
   patterns.forEach(pattern => {
-    filepaths = filepaths.concat(fg.sync(pattern, { absolute: true }));
+    filepaths = filepaths.concat(globby.sync(pattern, { absolute: true }));
   });
 
   filepaths.forEach(filepath => {

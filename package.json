@@ -14,8 +14,7 @@
   },
   "devDependencies": {
     "lerna": "^3.20.2",
-    "wsrun": "^5.2.0",
-    "fast-glob": "^3.2.2"
+    "wsrun": "^5.2.0"
   },
   "dependencies": {
     "concurrently": "^5.1.0"
